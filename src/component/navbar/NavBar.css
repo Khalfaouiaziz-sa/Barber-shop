@@ -1,0 +1,117 @@
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 70px;
+  z-index: 100;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.logo {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 24px;
+  letter-spacing: 1px;
+  color: #c9a86a;
+  white-space: nowrap;
+}
+
+.navlinks {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navlinks a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.navlinks a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+
+  width: 0;
+  height: 1px;
+
+  background: #c9a86a;
+  transition: width 0.3s ease;
+}
+
+.navlinks a:hover {
+  color: #c9a86a;
+}
+
+.navlinks a:hover::after {
+  width: 100%;
+}
+
+/* Hidden by default: desktop */
+.nav-icon {
+  display: none;
+  cursor: pointer;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 0 24px;
+  }
+
+  .navlinks {
+    gap: 18px;
+  }
+}
+
+
+
+/* Mobile and small tablets */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 16px;
+  }
+
+  .navlinks {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 25px 16px;
+    background: #080808;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    box-sizing: border-box;
+  }
+
+  /* Show menu when hamburger is clicked */
+  .navlinks.active {
+    display: flex;
+  }
+
+  .nav-icon {
+    display: block;
+    font-size: 26px;
+    color: #c9a86a;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+}
+
